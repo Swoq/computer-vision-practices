@@ -45,7 +45,7 @@ def draw_figure_transformation(fig, trans_func, trans_param):
     temp = fig.copy()
     for i in range(5):
         temp = np.dot(trans_func(trans_param), temp)
-        print("Figure:\n", temp)
+        print("Figure after applying ", trans_func, "\n", temp)
         draw_point_matrix(temp)
 
 
@@ -60,4 +60,4 @@ if __name__ == '__main__':
     draw_figure_transformation(figure, scale_matrix, 1.1)
 
     # SHIFT
-    draw_figure_transformation(figure, translate_matrix, 32)
+    draw_figure_transformation(figure, translate_matrix, -10)
