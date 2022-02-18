@@ -26,6 +26,12 @@ def scale_matrix(cof):
                      [0, 0, 1]])
 
 
+def shear_matrix(cof):
+    return np.array([[1, cof, 0],
+                     [cof, 1, 0],
+                     [0, 0, 1]])
+
+
 def translate_matrix(cof):
     return np.array([[1, 0, cof],
                      [0, 1, cof],
@@ -61,3 +67,7 @@ if __name__ == '__main__':
 
     # SHIFT
     draw_figure_transformation(figure, translate_matrix, -10)
+
+    # SHEAR
+    draw_figure_transformation(figure, shear_matrix, 0.2)
+    draw_figure_transformation(figure, shear_matrix, -0.2)
