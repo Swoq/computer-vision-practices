@@ -49,15 +49,15 @@ def create_2d_figure(outer_radius, edges):
 
 def draw_figure_transformation(fig, trans_func, trans_param):
     temp = fig.copy()
-    for i in range(5):
+    for i in range(10):
         temp = np.dot(trans_func(trans_param), temp)
         print("Figure after applying ", trans_func, "\n", temp)
         draw_point_matrix(temp)
 
 
 if __name__ == '__main__':
-    # CREATE HEXAGON MATRIX
-    figure = create_2d_figure(128, 6)
+    # CREATE PENTAGON MATRIX
+    figure = create_2d_figure(128, 5)
 
     # ROTATE
     draw_figure_transformation(figure, rotate_matrix, 10)
